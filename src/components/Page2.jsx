@@ -13,7 +13,7 @@ function Page2() {
             width: "100px",
             scrollTrigger: {
                 trigger: 'body',
-                start: '75%'
+                start: '50%'
             }
         })
 
