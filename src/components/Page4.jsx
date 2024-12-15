@@ -5,19 +5,19 @@ function Page4() {
     const data = [
         {
             h2: "E-mail",
-            img: "src/email.png",
+            img: "../src/email.png",
             p: "abubakarmarri007@gmail.com"
         },
 
         {
             h2: "Whatsapp Number",
-            img: "src/whatsapp.png",
+            img: "../src/whatsapp.png",
             p: "92+ 3312839822"
         },
 
         {
             h2: "Instagram",
-            img: "src/instagram.png",
+            img: "../src/instagram.png",
             p: "@kingsher007"
         },
     ]
@@ -26,7 +26,7 @@ function Page4() {
         <div className='min-h-[300px] w-full mt-11'>
             <div>
                 <h1 className='text-4xl font-semibold text-center'>Contact</h1>
-                <img className='mx-auto py-4' src="src/Hr line.svg" />
+                <img className='mx-auto py-4' src="../src/Hr line.svg" />
             </div>
             <div className='h-full flex items-center justify-center'>
                 <div className='w-full flex items-center justify-between px-11 mt-16 my-auto md:flex-row flex-col'>
