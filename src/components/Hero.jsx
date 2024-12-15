@@ -42,7 +42,7 @@ function Hero() {
                     <button className='py-3 px-7 outline-none mt-7 bg-[#029D66] flex items-center gap-3 rounded-sm text-base font-medium'>Contact me <img className='w-6' src="./src/assets/contactIcon.png" /></button>
                 </a>
             </div>
-            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="./src/assets/heroSecPic.webp" />
+            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="src/assets/heroSecPic.webp" />
         </div>
     )
 }

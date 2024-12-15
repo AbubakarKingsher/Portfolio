@@ -16,7 +16,7 @@ function Navigation() {
     return (
         <>
             <div ref={first} className='icon w-full bg-[#00925B] min-h-[280px] absolute top-[-500px] z-50'>
-                <img onClick={() => closeMenuIcon()} className='w-7 py-2 absolute right-2' src="./src/assets/closeIcon.png" />
+                <img onClick={() => closeMenuIcon()} className='w-7 py-2 absolute right-2' src="src/assets/closeIcon.png" />
                 <ul className='flex flex-col items-center justify-end h-full text-lg mt-6'>
                     <Link className='cursor-pointer hover:bg-[#0f8a5f] py-4 w-full text-center mt-5' to={"/"}><li>Home</li></Link>
                     <Link className='cursor-pointer hover:bg-[#0f8a5f] py-4 w-full text-center mt-5' to={"about"}><li>About</li></Link>

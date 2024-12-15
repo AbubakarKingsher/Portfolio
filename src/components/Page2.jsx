@@ -24,11 +24,11 @@ function Page2() {
 
             <div>
                 <h1 className='text-4xl font-semibold text-center'>Who I Am?</h1>
-                <img className='mx-auto py-4' src="./src/assets/Hr line.svg" />
+                <img className='mx-auto py-4' src="src/assets/Hr line.svg" />
             </div>
 
             <div className='flex mt-11 items-center md:flex-row flex-col'>
-                <img className='w-[300px] md:mb-0 mb-5' src="./src/assets/page2Pic.webp" />
+                <img className='w-[300px] md:mb-0 mb-5' src="src/assets/page2Pic.webp" />
                 <div className=' pl-5'>
                     <div className=''>
                         <h3 className='text-[#029D66] font-medium text-xl'>About me</h3>
