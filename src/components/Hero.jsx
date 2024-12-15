@@ -39,10 +39,10 @@ function Hero() {
                     <p className='heading-third md:text-[3vw] text-[5vw] font-light whitespace-nowrap'>Front-End Website Developer</p>
                 </div>
                 <a href="https://wa.me/923312839822?text=" target="_parent">
-                    <button className='py-3 px-7 outline-none mt-7 bg-[#029D66] flex items-center gap-3 rounded-sm text-base font-medium'>Contact me <img className='w-6' src="public/contactIcon.png" /></button>
+                    <button className='py-3 px-7 outline-none mt-7 bg-[#029D66] flex items-center gap-3 rounded-sm text-base font-medium'>Contact me <img className='w-6' src="contactIcon.png" /></button>
                 </a>
             </div>
-            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="public/heroSecPic.webp" />
+            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="heroSecPic.webp" />
         </div>
     )
 }
