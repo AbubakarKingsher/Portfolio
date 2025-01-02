@@ -24,7 +24,7 @@ function Hero() {
     })
 
     return (
-        <div className='min-h-[20vh] w-full flex md:items-center justify-between overflow-hidden flex-col md:flex-row'>
+        <div className='min-h-[70vh] w-full flex md:items-center justify-between overflow-hidden flex-col md:flex-row'>
             <div className='pl-[10vw] pt-[10vw] md:pt-[0]'>
                 <div className='overflow-hidden mb-2'>
                     <h1 className='first-heading  md:text-[7vw] md:leading-[6vw] mb-0 text-[12vw] font-bold'>Hello<span className='text-[#029D66]'>.</span></h1>
@@ -39,10 +39,10 @@ function Hero() {
                     <p className='heading-third md:text-[3vw] text-[5vw] font-light whitespace-nowrap'>Front-End Website Developer</p>
                 </div>
                 <a href="https://wa.me/923312839822?text=" target="_parent">
-                    <button className='py-3 px-7 outline-none mt-7 bg-[#029D66] flex items-center gap-3 rounded-sm text-base font-medium'>Contact me <img className='w-6' src="contactIcon.png" /></button>
+                    <button className='py-3 px-7 outline-none mt-7 bg-[#029D66] flex items-center gap-3 rounded-sm text-base font-medium'>Contact me <img className='w-6' src="dist/contactIcon.png" /></button>
                 </a>
             </div>
-            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="heroSecPic.webp" />
+            <img className='md:w-[25vw] w-[50vw] mx-auto md:mx-0 pt-10 md:pt-0' src="dist/heroSecPic.webp" />
         </div>
     )
 }

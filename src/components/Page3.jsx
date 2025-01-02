@@ -5,32 +5,32 @@ function Page3() {
     const data = [
         {
             name: "HTML 5",
-            img: "public/html.png"
+            img: "dist/html.png"
         },
 
         {
             name: "CSS",
-            img: "public/css.png"
+            img: "dist/css.png"
         },
 
         {
             name: "Javascript",
-            img: "public/js.png"
+            img: "dist/js.png"
         },
 
         {
             name: "Tailwind css",
-            img: "public/tailwind.png"
+            img: "dist/tailwind.png"
         },
 
         {
             name: "React Native",
-            img: "public/react.png"
+            img: "dist/react.png"
         },
 
         {
             name: "GSAP",
-            img: "public/gsap.png"
+            img: "dist/gsap.png"
         },
     ]
 
@@ -38,7 +38,7 @@ function Page3() {
         <div className='min-h-[400px] flex items-center flex-col mt-11'>
             <div>
                 <h1 className='text-4xl font-semibold text-center'>My Skills</h1>
-                <img className='mx-auto py-4' src="public/Hr line.svg" />
+                <img className='mx-auto py-4' src="dist/Hr line.svg" />
             </div>
 
             <div className='flex gap-5 mt-11 flex-wrap items-center justify-center'>

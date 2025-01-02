@@ -23,12 +23,12 @@ function Page2() {
         <div className='min-h-[20vh] w-full mt-11 flex flex-col items-center'>
 
             <div>
-                <h1 className='text-4xl font-semibold text-center'>Who I Am?</h1>
-                <img className='mx-auto py-4' src="public/Hr line.svg" />
+                <h1 className='text-4xl font-semibold text-center'>Who am I?</h1>
+                <img className='mx-auto py-4' src="dist/Hr line.svg" />
             </div>
 
             <div className='flex mt-11 items-center md:flex-row flex-col'>
-                <img className='w-[300px] md:mb-0 mb-5' src="public/page2Pic.webp" />
+                <img className='w-[300px] md:mb-0 mb-5' src="dist/page2Pic.webp" />
                 <div className=' pl-5'>
                     <div className=''>
                         <h3 className='text-[#029D66] font-medium text-xl'>About me</h3>
