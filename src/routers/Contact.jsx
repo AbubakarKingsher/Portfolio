@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 function Contact() {
   return (
-    <div className='min-h-screen w-full'>
+    <div>
             <Page4 />
             <Footer />
         </div>

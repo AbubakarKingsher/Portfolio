@@ -4,7 +4,7 @@ import Page3 from '../components/Page3'
 
 function Skills() {
     return (
-        <div className='min-h-screen w-full'>
+        <div>
             <Page3 />
             <Footer />
         </div>
