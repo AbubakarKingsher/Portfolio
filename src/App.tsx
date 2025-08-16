@@ -20,13 +20,20 @@ function App() {
   // ---- PRELOAD IMAGES ----
   useEffect(() => {
     const images = [
-      "/hero.svg",
-      "/logo.png",
-      "/about.svg",
-      "/skills.png",
-      "/project1.png",
-      "/footer.svg",
-      // yahan apni sari images aur svgs ka path add karo
+      "/Abubakar.svg",
+      "/logo.svg",
+      "/arock.webp",
+      "/exoape.webp",
+      "/cineFlix.webp",
+      "/my-pic.webp",
+      "/refous.webp",
+      "/redux.svg",
+      "/react.svg",
+      "/js.svg",
+      "/tailwind.svg",
+      "/html.svg",
+      "/css.svg",
+      "/sun.gif",
     ];
 
     let loaded = 0;
