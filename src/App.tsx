@@ -5,90 +5,75 @@ import Project from "./components/Project";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
-import Loading from "./components/Loading";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
-  const loaderRef = useRef<HTMLDivElement>(null!);
+  const loaderRef = useRef<any>(null);
   const [progress, setProgress] = useState(0);
   const [isLoaderDone, setIsLoaderDone] = useState(false);
-
   gsap.registerPlugin(useGSAP);
 
-  // ---- PRELOAD IMAGES ----
   useEffect(() => {
-    const images = [
-      "/Abubakar.svg",
-      "/logo.svg",
-      "/arock.webp",
-      "/exoape.webp",
-      "/cineFlix.webp",
-      "/my-pic.webp",
-      "/refous.webp",
-      "/redux.svg",
-      "/react.svg",
-      "/js.svg",
-      "/tailwind.svg",
-      "/html.svg",
-      "/css.svg",
-      "/sun.gif",
-    ];
-
-    let loaded = 0;
-
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        loaded++;
-        setProgress(Math.round((loaded / images.length) * 100));
-      };
-      img.onerror = () => {
-        // agar image load na ho to bhi progress bar aage chale
-        loaded++;
-        setProgress(Math.round((loaded / images.length) * 100));
-      };
-    });
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 500);
   }, []);
 
-  // ---- Animate loader hatna ----
   useGSAP(() => {
     if (progress === 100) {
       gsap.to(loaderRef.current, {
         y: "-100%",
         duration: 1,
         ease: "power4.inOut",
-        onComplete: () => setIsLoaderDone(true),
       });
     }
   }, [progress]);
 
-  // ---- Jab tak loader active hai tab tak scroll band ----
   useEffect(() => {
-    if (progress < 100) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+    if (progress >= 90 && !isLoaderDone) {
+      setIsLoaderDone(true);
     }
+  }, [progress, isLoaderDone]);
+
+  useEffect(() => {
+    const element = loaderRef.current;
+    if (!element) return;
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+    };
+
+    if (progress < 100) {
+      element.addEventListener("wheel", preventScroll, { passive: false });
+      element.addEventListener("touchmove", preventScroll, { passive: false });
+    } else {
+      element.removeEventListener("wheel", preventScroll);
+      element.removeEventListener("touchmove", preventScroll);
+    }
+    return () => {
+      element.removeEventListener("wheel", preventScroll);
+      element.removeEventListener("touchmove", preventScroll);
+    };
   }, [progress]);
 
   return (
     <div className="bg-[#F1F0EE] h-full w-full">
-      {/* Loader */}
-      {!isLoaderDone && <Loading progress={progress} loaderRef={loaderRef} />}
-
-      {/* Website content */}
-      <Hero progress={progress} loaderRef={loaderRef} isLoaderDone={isLoaderDone} />
-      <MenuBar />
-      <About />
-      <Skills />
-      <Project />
-      <Contact />
-      <Footer />
+      {" "}
+      <Hero
+        progress={progress}
+        loaderRef={loaderRef}
+        isLoaderDone={isLoaderDone}
+      />{" "}
+      {/* <MenuBar /> */} <About /> <Skills /> <Project /> <Contact />{" "}
+      <Footer />{" "}
     </div>
   );
 }
-
 export default App;
