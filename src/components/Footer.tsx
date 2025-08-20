@@ -1,6 +1,6 @@
 
-
 function Footer() {
+
     return (
         <div className='w-full text-[#F1F0EE] bg-black relative sm:px-15 px-5 overflow-hiddenf flex flex-col'>
             <div className="flex sm:items-center items-start h-full w-full justify-between flex-col sm:flex-row">
@@ -14,18 +14,18 @@ function Footer() {
             </div>
             <div className="flex sm:items-center text-sm justify-between sm:flex-row flex-col tracking-wide border-t-2 border-white/85 py-10">
                 <p className="text-2xl sm:mb-0 mb-7">Thanks for scrolling! Stay connected </p>
-                <div className="flex flex-col sm:mb-0 mb-7">
+                <div className="flex flex-col sm:mb-0 mb-7 text-xs opacity-50">
                     <h3 className="pb-2">abubakarmarri007@gmail.com</h3>
                     <h3 className="pb-2">92+ 3378428820</h3>
                     <h3 className="pb-2">Quetta, Pakistan</h3>
                 </div>
-                <div className="flex flex-col underline">
+                <div className="flex flex-col underline text-xs opacity-50">
                     <a className="pb-2" href="#">Instagram</a>
                     <a className="pb-2" href="#">LinkedIn</a>
                     <a className="pb-2" href="#">GitHub</a>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

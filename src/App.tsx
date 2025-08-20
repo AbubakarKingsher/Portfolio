@@ -7,72 +7,29 @@ import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import Loading from "./components/Loading";
+import { AppContext, AppProvider } from "./context/AppContext";
 
 function App() {
   const loaderRef = useRef<any>(null);
+  const menuBarRef = useRef<any>(null);
+  const aboutRef = useRef<any>(null);
   const [progress, setProgress] = useState(0);
-  const [isLoaderDone, setIsLoaderDone] = useState(false);
-  gsap.registerPlugin(useGSAP);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 10;
-      });
-    }, 500);
-  }, []);
-
-  useGSAP(() => {
-    if (progress === 100) {
-      gsap.to(loaderRef.current, {
-        y: "-100%",
-        duration: 1,
-        ease: "power4.inOut",
-      });
-    }
-  }, [progress]);
-
-  useEffect(() => {
-    if (progress >= 90 && !isLoaderDone) {
-      setIsLoaderDone(true);
-    }
-  }, [progress, isLoaderDone]);
-
-  useEffect(() => {
-    const element = loaderRef.current;
-    if (!element) return;
-    const preventScroll = (e: Event) => {
-      e.preventDefault();
-    };
-
-    if (progress < 100) {
-      element.addEventListener("wheel", preventScroll, { passive: false });
-      element.addEventListener("touchmove", preventScroll, { passive: false });
-    } else {
-      element.removeEventListener("wheel", preventScroll);
-      element.removeEventListener("touchmove", preventScroll);
-    }
-    return () => {
-      element.removeEventListener("wheel", preventScroll);
-      element.removeEventListener("touchmove", preventScroll);
-    };
-  }, [progress]);
+  const [menuBarHandler, setmenuBarHandler] = useState(false)
+  const { isLoaderDone, setIsLoaderDone } = useContext(AppContext);
+  
 
   return (
-    <div className="bg-[#F1F0EE] h-full w-full">
-      {" "}
-      <Hero
-        progress={progress}
-        loaderRef={loaderRef}
-        isLoaderDone={isLoaderDone}
-      />{" "}
-      {/* <MenuBar /> */} <About /> <Skills /> <Project /> <Contact />{" "}
-      <Footer />{" "}
+    <div className="relative bg-[#F1F0EE] overflow-y-hidden h-full w-full">
+      <MenuBar />
+      <Loading />
+      <Hero />
+      <About />
+      <Skills />
+      <Project />
+      <Contact />
+      <Footer />
     </div>
   );
 }

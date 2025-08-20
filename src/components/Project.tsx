@@ -1,8 +1,12 @@
+import { AppContext } from "../context/AppContext";
+import { useContext } from "react";
 
 function Project() {
 
+    const { projectRef } = useContext(AppContext)
+
     return (
-        <div className="w-full md:px-10 px-5 mt-10 relative md:border-y-1 border-black/20">
+        <div ref={projectRef} className="w-full md:px-10 px-5 mt-10 relative md:border-y-1 border-black/20">
             <div className="flex justify-between md:gap-10 md:flex-row flex-col">
                 <div className="mt-20 flex flex-col justify-between">
                     <div className="flex items-center md:gap-15 gap-7">

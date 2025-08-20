@@ -1,10 +1,14 @@
+import { AppContext } from "../context/AppContext";
+import { useContext } from "react";
 
 function Skills() {
 
   const images = ["html.svg", "css.svg", "react.svg", "js.svg", "redux.svg", "tailwind.svg"];
 
+  const { skillsRef } = useContext(AppContext)
+
   return (
-    <div className='w-full md:px-10 px-5'>
+    <div ref={skillsRef} className='w-full md:px-10 px-5'>
       <h1
         style={{ fontFamily: "Saira, sans-serif" }}
         className='md:text-[8vw] mt-5 text-[15vw] leading-fit font-medium ml-auto w-fit'>SKILLS</h1>

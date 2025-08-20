@@ -1,37 +1,28 @@
+import { AppContext, AppProvider } from "../context/AppContext";
 import FlipLink from "./ui/text-effect-flipper";
+import { useContext } from "react";
 
 function MenuBar() {
-  const data = [
-    {
-      title: "HOME",
-      link: "home",
-      num: "01",
-    },
 
-    {
-      title: "ABOUT",
-      link: "about",
-      num: "02",
-    },
-
-    {
-      title: "SKILLS",
-      link: "skills",
-      num: "03",
-    },
-
-    {
-      title: "PR✳JECTS",
-      link: "projects",
-      num: "04",
-    },
-  ];
+  const { menuBarRef, setmenuBarHandler, menuBarHandler, data, handleScroll } = useContext(AppContext);
 
   return (
-    <div className="md:h-screen h-[90vh] w-full bg-[#f1f0ee] md:px-10 px-5">
+    <div
+      style={{
+        transform: "translateY(100%)",
+        pointerEvents: "none",
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+      }}
+      ref={menuBarRef}
+      className={`md:h-screen z-50 h-[90vh] w-full bg-[#f1f0ee] md:px-10 px-5`}
+    >
       <div className="relative h-[90px] flex items-center w-full justify-between gap-5 md:mb-15 mb-7">
         <img className="w-20" src="logo.svg" alt="Site Logo" />
         <button
+          onClick={() => setmenuBarHandler(false)}
           style={{ fontFamily: "Saira, sans-serif" }}
           className="cursor-pointer text-sm"
         >
@@ -49,12 +40,19 @@ function MenuBar() {
           {data.map((item, idx) => {
             return (
               <div
+                onClick={() => handleScroll(item.link)}
                 key={idx}
                 className="h-fit group md:w-[55vw] border-black/40 border-b-2 w-full flex items-start md:gap-10 gap-5"
               >
-                <span className="md:text-xs cursor-pointer text-[.7rem] mt-4">{item.num}</span>
-                <FlipLink href={item.link}>{item.title}</FlipLink>
-                <img className="md:w-9 w-6  ml-auto mt-4 transition-transform duration-300 group-hover:rotate-45" src="top-right-arrow.svg" alt="arrow-icon" />
+                <span className="md:text-xs cursor-pointer text-[.7rem] mt-4">
+                  {item.num}
+                </span>
+                <FlipLink>{item.title}</FlipLink>
+                <img
+                  className="md:w-9 w-6  ml-auto mt-4 transition-transform duration-300 group-hover:rotate-45"
+                  src="top-right-arrow.svg"
+                  alt="arrow-icon"
+                />
               </div>
             );
           })}

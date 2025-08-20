@@ -1,15 +1,15 @@
+import { AppContext, AppProvider } from "../context/AppContext";
 import { motion } from 'framer-motion';
-type LoadingProps = {
-  progress: number;
-  loaderRef: React.RefObject<HTMLDivElement>;
-};
+import { useContext } from 'react';
 
-function Loading({ progress, loaderRef }: LoadingProps) {
+function Loading() {
+
+  const { progress, loaderRef } = useContext(AppContext)
 
   return (
     <div ref={loaderRef}
       style={{ fontFamily: "Saira, sans-serif" }}
-      className='h-screen absolute left-0 top-0 z-50 text-white w-full bg-black'>
+      className='h-screen fixed left-0 top-0 z-50 text-white w-full bg-black'>
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: `${progress}%` }}

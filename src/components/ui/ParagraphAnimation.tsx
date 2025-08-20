@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 type ParagraphAnimationProps = {
-    lines: string[]; // har line ko array ke andar pass karo
-    delay?: number;  // optional delay before animation starts
+    lines: string[]; 
+    delay?: number;
 };
 
 const lineVariant = {
@@ -14,8 +14,8 @@ const containerVariant = {
     hidden: {},
     visible: (customDelay: number) => ({
         transition: {
-            delayChildren: customDelay, // animation start delay
-            staggerChildren: 0.15,      // har line ke beech delay
+            delayChildren: customDelay,
+            staggerChildren: 0.15,
         },
     }),
 };
