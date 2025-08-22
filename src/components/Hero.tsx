@@ -6,6 +6,7 @@ import AnimatedText from "./ui/AnimationText";
 import ParagraphAnimation from "./ui/ParagraphAnimation";
 import { useContext } from "react";
 import { AppContext, AppProvider } from "../context/AppContext";
+import NumberAnimation from "./ui/NumberAnimation";
 
 function Hero() {
 
@@ -43,16 +44,12 @@ function Hero() {
                                 ease: "easeInOut",
                             }}
                         />
-                        {isLoaderDone && <motion.h1
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: .5, x: 0 }}
-                            transition={{ delay: 1.5, duration: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
+                        {isLoaderDone && <h1
                             style={{ fontFamily: "Saira, sans-serif" }}
                             className="stroke-text ml-auto text-transparent font-bold opacity-40 text-[22vw] md:text-[10vw]"
                         >
-                            01
-                        </motion.h1>}
+                            <NumberAnimation direction="right">01</NumberAnimation>
+                        </h1>}
                     </div>
                 </div>
                 <div className='flex items-center justify-between flex-wrap gap-10 md:mt-20 mt-7'>

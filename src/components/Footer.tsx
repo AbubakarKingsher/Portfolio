@@ -10,7 +10,7 @@ function Footer() {
                         className="sm:text-[7vw] sm:leading-[7vw] text-[13vw] leading-[13vw] uppercase font-black">Crafted<br />Abubakar</h1>
                     <img className="sm:w-[9vw] sm:opacity-100 opacity-90 w-[17vw] absolute right-7 top-[50%] -translate-y-1/2" src="By.svg" />
                 </div>
-                <img className="sm:w-[35vw] w-[80vw] sm:mx-0 mx-auto object-cover" src="sun.gif" />
+                <img className="sm:w-[35vw] w-[80vw] sm:mx-0 mx-auto object-cover" src="globe.gif" />
             </div>
             <div className="flex sm:items-center text-sm justify-between sm:flex-row flex-col tracking-wide border-t-2 border-white/85 py-10">
                 <p className="text-2xl sm:mb-0 mb-7">Thanks for scrolling! Stay connected </p>

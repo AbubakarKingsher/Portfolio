@@ -1,10 +1,20 @@
 import { AppContext, AppProvider } from "../context/AppContext";
 import FlipLink from "./ui/text-effect-flipper";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function MenuBar() {
 
   const { menuBarRef, setmenuBarHandler, menuBarHandler, data, handleScroll } = useContext(AppContext);
+  useEffect(() => {
+    if (menuBarHandler) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuBarHandler]);
 
   return (
     <div
@@ -17,7 +27,7 @@ function MenuBar() {
         right: 0,
       }}
       ref={menuBarRef}
-      className={`md:h-screen z-50 h-[90vh] w-full bg-[#f1f0ee] md:px-10 px-5`}
+      className={`md:h-screen z-50 h-[90vh] overflow-hidden w-full bg-[#f1f0ee] md:px-10 px-5`}
     >
       <div className="relative h-[90px] flex items-center w-full justify-between gap-5 md:mb-15 mb-7">
         <img className="w-20" src="logo.svg" alt="Site Logo" />
