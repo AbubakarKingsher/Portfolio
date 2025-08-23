@@ -24,10 +24,11 @@ function Hero() {
                         >
                             <AnimatedText start={isLoaderDone}>Frontend<br />Engineer</AnimatedText>
                             {isLoaderDone && <motion.img
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1.5, duration: 1 }}
-                                viewport={{ once: true, amount: 0.5 }}
+                                initial={{ y: 30, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: .8, delay: 2, ease: "easeInOut" }}
+                                viewport={{ once: true }}
+
                                 className='md:w-[20vw] md:opacity-100 opacity-90 w-[35vw] absolute md:-right-20 -right-10 top-[47%] -translate-y-1/2' src="Abubakar.svg" alt='My Name' />}
                         </h1>
                     </div>
@@ -48,7 +49,7 @@ function Hero() {
                             style={{ fontFamily: "Saira, sans-serif" }}
                             className="stroke-text ml-auto text-transparent font-bold opacity-40 text-[22vw] md:text-[10vw]"
                         >
-                            <NumberAnimation direction="right">01</NumberAnimation>
+                            <NumberAnimation delay={2} direction="right">01</NumberAnimation>
                         </h1>}
                     </div>
                 </div>
@@ -68,7 +69,7 @@ function Hero() {
                                 "Design meets functionality -",
                                 "and it all starts with a scroll."
                             ]}
-                            delay={0.5}
+                            delay={1}
                         />}
                     </div>
                 </div>

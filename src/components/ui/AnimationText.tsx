@@ -22,7 +22,7 @@ export default function AnimatedText({ children, start = false }: AnimatedTextPr
             { y: "100%" },
             {
                 y: "0%",
-                delay: .4,
+                delay: .9,
                 duration: DURATION,
                 stagger: STAGGER,
                 ease: "power2.inOut",

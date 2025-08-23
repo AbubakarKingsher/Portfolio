@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // smoothness
+      duration: 1.2,
       easing: (t: number) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
     });

@@ -49,7 +49,7 @@ function Project() {
                                 tools like React, GSAP, and Tailwind CSS.</FadeIn>
                         </div>
                         <div className="md:text-base text-xs md:mt-0 tracking-wider md:leading-6 leading-5">
-                            <FadeIn delay={0.7}>
+                            <FadeIn delay={0.6}>
                                 Each project reflects my passion for front-end
                                 development and bringing ideas to life.
                             </FadeIn>
@@ -118,17 +118,19 @@ function Project() {
                     </div>
                 </div>
                 <div className="md:mt-20 mt-10 md:hidden block">
-                    <p className="md:text-base text-xs md:mt-0 mb-5 tracking-wider md:leading-6 leading-5">
-                        Here’s a selection of my recent projects <br />
-                        built with a focus on clean design and <br />
-                        interactive user experience. I love combining <br />
-                        smooth animations with responsive layouts<br /> using
-                        tools like React, GSAP, and Tailwind CSS.
-                    </p>
-                    <p className="md:text-base text-xs md:mt-0 tracking-wider md:leading-6 leading-5">
-                        Each project reflects my passion for front-end <br />
-                        development and bringing ideas to life.
-                    </p>
+                    <div className="md:text-base text-xs md:mt-0 mb-5 tracking-wider md:leading-6 leading-5">
+                        <FadeIn delay={0.4}>Here’s a selection of my recent projects
+                            built with a focus on clean design and
+                            interactive user experience. I love combining
+                            smooth animations with responsive layouts using
+                            tools like React, GSAP, and Tailwind CSS.</FadeIn>
+                    </div>
+                    <div className="md:text-base text-xs md:mt-0 tracking-wider md:leading-6 leading-5">
+                        <FadeIn delay={0.6}>
+                            Each project reflects my passion for front-end
+                            development and bringing ideas to life.
+                        </FadeIn>
+                    </div>
                     <h1
                         style={{ fontFamily: "Saira, sans-serif" }}
                         className="stroke-text text-transparent mt-2 font-bold text-right stroke-black opacity-40 text-[22vw] leading-fit md:text-[10vw]"
