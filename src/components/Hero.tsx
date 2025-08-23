@@ -10,11 +10,12 @@ import NumberAnimation from "./ui/NumberAnimation";
 
 function Hero() {
 
-    const { isLoaderDone, setmenuBarHandler } = useContext(AppContext);
+    const { isLoaderDone, setmenuBarHandler, homeRef } = useContext(AppContext);
 
     return (
-        <>
+        <div className="relative" >
             <Navbar setmenuBarHandler={setmenuBarHandler} />
+            <div ref={homeRef} className="h-screen w-screen bg-black top-0 left-0 absolute z-30 opacity-0"></div>
             <div className='md:px-15 px-5'>
                 <div className='flex md:items-center justify-between w-full flex-col md:flex-row'>
                     <div className="w-fit relative flex items-center justify-between">
@@ -24,11 +25,10 @@ function Hero() {
                         >
                             <AnimatedText start={isLoaderDone}>Frontend<br />Engineer</AnimatedText>
                             {isLoaderDone && <motion.img
-                                initial={{ y: 30, opacity: 0 }}
+                                initial={{ y: 10, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
-                                transition={{ duration: .8, delay: 2, ease: "easeInOut" }}
+                                transition={{ duration: .8, delay: 2.5, ease: "easeInOut" }}
                                 viewport={{ once: true }}
-
                                 className='md:w-[20vw] md:opacity-100 opacity-90 w-[35vw] absolute md:-right-20 -right-10 top-[47%] -translate-y-1/2' src="Abubakar.svg" alt='My Name' />}
                         </h1>
                     </div>
@@ -49,7 +49,7 @@ function Hero() {
                             style={{ fontFamily: "Saira, sans-serif" }}
                             className="stroke-text ml-auto text-transparent font-bold opacity-40 text-[22vw] md:text-[10vw]"
                         >
-                            <NumberAnimation delay={2} direction="right">01</NumberAnimation>
+                            <NumberAnimation delay={2.5} direction="right">01</NumberAnimation>
                         </h1>}
                     </div>
                 </div>
@@ -69,13 +69,13 @@ function Hero() {
                                 "Design meets functionality -",
                                 "and it all starts with a scroll."
                             ]}
-                            delay={1}
+                            delay={1.5}
                         />}
                     </div>
                 </div>
             </div>
             <TextScroll text="Code  Craft ✦" />
-        </>
+        </div>
     );
 }
 

@@ -96,10 +96,22 @@ export const AppProvider = ({ children }: Props) => {
                 duration: 1,
                 ease: "power4.inOut",
             });
+            gsap.to(homeRef.current, {
+                opacity: 1,
+                pointerEvents: "auto",
+                duration: 1,
+                ease: "power4.inOut",
+            });
         } else {
             gsap.to(menuBarRef.current, {
                 y: "100%",
                 pointerEvents: "none",
+                duration: 1,
+                ease: "power4.inOut",
+            });
+            gsap.to(homeRef.current, {
+                opacity: 0,
+                pointerEvents: "auto",
                 duration: 1,
                 ease: "power4.inOut",
             });

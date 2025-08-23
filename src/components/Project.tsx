@@ -135,7 +135,7 @@ function Project() {
                         style={{ fontFamily: "Saira, sans-serif" }}
                         className="stroke-text text-transparent mt-2 font-bold text-right stroke-black opacity-40 text-[22vw] leading-fit md:text-[10vw]"
                     >
-                        04
+                        <NumberAnimation>04</NumberAnimation>
                     </h1>
                 </div>
             </div>

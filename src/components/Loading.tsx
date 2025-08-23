@@ -4,6 +4,13 @@ import { useContext } from 'react';
 
 function Loading() {
 
+  const images = ["exoape.webp", "arock.webp", "cineFlix.webp", "refokus.webp"];
+
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+
   const { progress, loaderRef } = useContext(AppContext)
 
   return (

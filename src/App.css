@@ -11,9 +11,11 @@ base layer {
   }
 }
 
-html, body {
+html,
+body {
   scroll-behavior: auto !important;
   overflow-x: hidden;
+  background-color: #000;
 }
 
 .stroke-text {
